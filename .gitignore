@@ -1,0 +1,7 @@
+#ignore weight files
+
+*.weights
+
+# Ignore Keras Model Weights
+*.h5
+
