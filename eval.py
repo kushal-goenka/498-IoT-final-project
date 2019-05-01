@@ -185,11 +185,11 @@ def write(x, results, file):
     color = random.choice(colors)
     label = "{0}".format(classes[cls])
     cv2.rectangle(img, c1, c2,color, 1)
+    f.write(label+" "+str(c1[0].item())+" "+str(c1[1].item())+" "+str(c2[0].item())+" "+str(c2[1].item())+"\n")
     t_size = cv2.getTextSize(label, cv2.FONT_HERSHEY_PLAIN, 1 , 1)[0]
     c2 = c1[0] + t_size[0] + 3, c1[1] + t_size[1] + 4
     cv2.rectangle(img, c1, c2,color, -1)
     cv2.putText(img, label, (c1[0], c1[1] + t_size[1] + 4), cv2.FONT_HERSHEY_PLAIN, 1, [225,255,255], 1);
-    f.write(label+" "+str(c1[0].item())+" "+str(c1[1].item())+" "+str(c2[0].item())+" "+str(c2[1].item())+"\n")
     return img
 
 f = open("test.txt", "w+")
