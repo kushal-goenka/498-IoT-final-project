@@ -177,11 +177,9 @@ colors = pkl.load(open("pallete", "rb"))
 draw = time.time()
 
 
-def write(x, results):
+def write(x, results, file):
     c1 = tuple(x[1:3].int())
     c2 = tuple(x[3:5].int())
-    print("c1: ", c1)
-    print("c2: ", c1)
     img = results[int(x[0])]
     cls = int(x[-1])
     color = random.choice(colors)
@@ -191,11 +189,12 @@ def write(x, results):
     c2 = c1[0] + t_size[0] + 3, c1[1] + t_size[1] + 4
     cv2.rectangle(img, c1, c2,color, -1)
     cv2.putText(img, label, (c1[0], c1[1] + t_size[1] + 4), cv2.FONT_HERSHEY_PLAIN, 1, [225,255,255], 1);
-    print("label: ", label)
+    f.write(label+" "+str(c1[0].item())+" "+str(c1[1].item())+" "+str(c2[0].item())+" "+str(c2[1].item())+"\n")
     return img
 
-
-list(map(lambda x: write(x, loaded_ims), output))
+f = open("test.txt", "w+")
+list(map(lambda x: write(x, loaded_ims, f), output))
+f.close()
 
 det_names = pd.Series(imlist).apply(lambda x: "{}/det_{}".format(args.det,x.split("/")[-1]))
 
@@ -204,8 +203,6 @@ list(map(cv2.imwrite, det_names, loaded_ims))
 
 end = time.time()
 
-print("output: ", output)
-print("prediction: ", prediction)
 
 print("SUMMARY")
 print("----------------------------------------------------------")

@@ -1,0 +1,35 @@
+person: accuracy 367 1517 1176 2658
+person: accuracy 1855 1555 2565 2706
+person: accuracy 1352 33 1896 834
+person: accuracy 2159 863 2582 1517
+person: accuracy 2109 28 2672 654
+c1:  2684 1028
+c2:  3024 2221
+label:  person
+c1:  1322 1909
+c2:  1898 2367
+label:  backpack
+c1:  516 2504
+c2:  881 3114
+label:  backpack
+c1:  512 2454
+c2:  895 3085
+label:  handbag
+c1:  213 1738
+c2:  807 2737
+label:  chair
+c1:  2047 1732
+c2:  2605 2811
+label:  chair
+c1:  2589 13
+c2:  3023 1017
+label:  chair
+c1:  673 935
+c2:  1043 1653
+label:  chair
+c1:  874 52
+c2:  1400 803
+label:  chair
+c1:  2694 1588
+c2:  3002 2871
+label:  chair
