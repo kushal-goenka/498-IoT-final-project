@@ -184,7 +184,7 @@ def write(x, results, file):
     cls = int(x[-1])
     color = random.choice(colors)
     label = "{0}".format(classes[cls])
-    cv2.rectangle(img, c1, c2,color, 1)
+    cv2.rectangle(img, c1, c2,color, 3)
     f.write(label+" "+str(c1[0].item())+" "+str(c1[1].item())+" "+str(c2[0].item())+" "+str(c2[1].item())+"\n")
     t_size = cv2.getTextSize(label, cv2.FONT_HERSHEY_PLAIN, 1 , 1)[0]
     c2 = c1[0] + t_size[0] + 3, c1[1] + t_size[1] + 4
