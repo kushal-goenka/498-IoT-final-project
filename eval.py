@@ -29,7 +29,7 @@ def arg_parse():
                         "Image / Directory to store detections to",
                         default = "checkpoints", type = str)
     parser.add_argument("--bs", dest = "bs", help = "Batch size", default = 1)
-    parser.add_argument("--confidence", dest = "confidence", help = "Object Confidence to filter predictions", default = 0.5)
+    parser.add_argument("--confidence", dest = "confidence", help = "Object Confidence to filter predictions", default = 0.1)
     parser.add_argument("--nms_thresh", dest = "nms_thresh", help = "NMS Threshhold", default = 0.4)
     parser.add_argument("--cfg", dest = 'cfgfile', help =
                         "Config file",
@@ -192,7 +192,7 @@ def write(x, results, file):
     cv2.putText(img, label, (c1[0], c1[1] + t_size[1] + 4), cv2.FONT_HERSHEY_PLAIN, 1, [225,255,255], 1);
     return img
 
-f = open("test.txt", "w+")
+f = open("test3.txt", "w+")
 list(map(lambda x: write(x, loaded_ims, f), output))
 f.close()
 
